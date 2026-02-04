@@ -46,12 +46,38 @@
             transform: rotateY(0deg) translateY(0) skewY(0deg);
     opacity: 1;
   }
+
 }
+
+img{
+    height:100px;
+    transition: height 2s, 2s;
+  }
+  img:hover {
+    height:500px
+  }
+
+  .animationBalloon{
+    float:right;
+    height:100px;
+    animation-name: myAnimation;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: 3;
+  }
+
+  @keyframes myAnimation{
+    from{height:100px;}
+    to{height:500px;}
+  }
 
 </style>
 
 <body>
     <h1 class = "tilt-in-top-1">Katie Morseman</h1>
+
+    <img src = "balloon.jpg" alt="image of balloon">
+    <img src = "balloon.jpg" alt="image of balloon" class = "animationBalloon">
     
 </body>
 </html>
