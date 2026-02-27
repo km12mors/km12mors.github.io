@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey Continues</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="container">
+        <h1>The Journey Continues</h1>
+        <p>With the guardian's riddle behind you, the path forward splits into three. Each route is known to favor
+            certain traits: strength, wisdom, or stealth. Choose your path wisely, as it will influence the challenges
+            you face ahead.</p>
+
+        <form type="get">
+            <div>
+                <label for="pathChoice">Choose Your Path: </label>
+                <select id="pathChoice" name="pathChoice" required>
+                    <option value="">-Please choose an option--</option>
+                    <option value="strength">The Path of Strength</option>
+                    <option value="wisdom">The Path of Wisdom</option>
+                    <option value="stealth">The Path of Stealth</option>
+                </select>
+                <input id = "submitPath" type="submit" value="Continue on Your Journey">
+            </div>
+        </form>
+
+        <p>Your choice will not only test your abilities but also reveal deeper truths about your character.</p>
+    </section>
+    <script>
+        const pathChoice = document.getElementById("pathChoice");
+        const submitPath = document.getElementById("submitPath");
+       
+        pathChoice.addEventListener("change", function(){
+            if(pathChoice.value == "strength"){
+                document.body.style.backgroundColor = "red";
+            }
+            else if(pathChoice.value == "wisdom"){
+                document.body.style.backgroundColor = "orange";
+            }
+            else if(pathChoice.value == "stealth"){
+                document.body.style.backgroundColor = "purple";
+            }
+            else{
+                document.body.style.backgroundColor = "white";
+            }
+        });
+
+         submitPath.addEventListener("click", function(event){
+            event.preventDefault();
+            if(pathChoice.value=="stealth"){
+                location.href = "page5b.html";
+            }
+            else{
+                location.href = "page6.html";
+            }
+         });
+        
+    </script>
+</body>
+
+</html>
