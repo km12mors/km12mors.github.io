@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conclusion</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="container">
+        <h1>Your Quest Has Concluded</h1>
+        <p>Based on your choices, [Insert a dynamic conclusion based on the user's journey and final decision]. The
+            kingdom will remember your deeds for generations to come.</p>
+        <p>We hope you enjoyed your adventure. Would you like to provide feedback on your experience?</p>
+
+        <label for="message">Your Feedback:</label>
+        <textarea id="message" id = "finalShowdown" style="width: 400px; height: 65px;" placeholder="Enter your feedback here..."></textarea>
+        <div><button>Submit Feedback</button></div>
+        <div><button id = "playAgain">Play Again</button></div>
+        <p>I am thankful for my friends I have met at Siena and my best friend Hailey. 
+            If it weren't for them, I would not have made it this far. 
+            They have made this semeseter go by much easier with their presence in my life!</p>
+    </section>
+
+    <script>
+        const playAgain = document.getElementById("playAgain");
+
+        playAgain.addEventListener("click", function(){
+            location.href = "welcome.html";
+        });
+    </script>
+    
+</body>
+
+</html>
