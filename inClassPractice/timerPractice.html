@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="start">Start Timer</button>
+    <button id="stop">Stop Timer</button>
+    <p id="counter">0</p>
+
+    <script>
+        console.log("Start");
+        setTimeout(() => console.log("Timeout executed!"), 2000);
+        console.log("End");
+
+        setTimeout(() => console.log("Hello!"), 2000);
+
+        let timerId;
+        let count = 0;
+        document.getElementById("start").addEventListener("click", () => {
+            if (!timerId) {
+                timerId = setInterval(() => {
+                    count++;
+                    document.getElementById("counter").textContent = count;
+                }, 1000);
+            }
+        });
+
+        document.getElementById("stop").addEventListener("click", () => {
+            clearInterval(timerId);
+        });
+
+    </script>
+</body>
+
+</html>
