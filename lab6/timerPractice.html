@@ -10,7 +10,7 @@
 <body>
     <button id="start">Start Timer</button>
     <button id="stop">Stop Timer</button>
-    <p id="counter">0</p>
+    <p id="outputPlace">0</p>
 
     <script>
         console.log("Start");
@@ -25,7 +25,7 @@
             if (!timerId) {
                 timerId = setInterval(() => {
                     count++;
-                    document.getElementById("counter").textContent = count;
+                    document.getElementById("outputPlace").textContent = count;
                 }, 1000);
             }
         });

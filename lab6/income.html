@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<main class = "container">
+    <body>
+        <h1>Add Income</h1>
+        <form id=incomeForm>
+            <div class="mb-3">
+                <label for="sourceName" class="form-label">Income Source Name:</label>
+                <input type="text" class="form-control" id="sourceName" minlength="3">
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount:</label>
+                <input type="number" class="form-control" id="amount" step = ".01" min = ".01">
+            </div>
+            <div class="mb-3">
+                <label for="frequency" class="form-label">Frequency:</label>
+                <select name="frequency" class="form-select form-select-md" id="frequency">
+                    <option value="one-time">One-Time</option>
+                    <option selected value="monthly">Monthly</option>
+                    <option value="bi-weekly">Bi-Weekly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+            <input class="btn btn-primary" id="submit" type="submit" value="Submit">
+        </form>
+        <script src="income.js" defer></script>
+    </body>
+</main>
+
+</html>
