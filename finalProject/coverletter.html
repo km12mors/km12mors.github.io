@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="style.css">-->
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main class="container">
+        <section >
+            <h1>Your Cover Letter</h1>
+
+            <section id="results">
+                <div id="cover-output"></div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script>
+        const output = document.getElementById("cover-output");
+
+        if (output) {
+            output.innerText = localStorage.getItem("aiCover");
+        }
+    </script>
+</body>
+
+</html>
