@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/users" method="POST">
+        <label class = "form-label" for="name"><strong>Full Name:</strong></label>
+        <input class = "form-control" id="name" type="text" name="name">
+<br>
+         <label class = "form-label" for="email"><strong>Email:</strong></label>
+        <input class = "form-control" id="email" type="email" name="email">
+<br>
+         <label class = "form-label" for="message"><strong>Message:</strong></label>
+        <textarea class = "form-control" id="message" name="message"></textarea>
+        <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+
+    <script>
+        const myForm = document.querySelector('form');
+
+myForm.addEventListener('submit', async function (event) {
+    event.preventDefault(); // Keep page from reloading
+
+    // 1. Get data from the inputs
+    const userName = document.getElementById('name').value;
+    const userEmail = document.getElementById('email').value;
+
+    // 2. Prepare the data object
+    const formData = {
+        name: userName,
+        email: userEmail
+    };
+
+    // 3. POST the data to your backend
+    try {
+        const response = await fetch('/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log("User added successfully:", result);
+            // You could add code here to clear the form or alert the user
+        }
+    } catch (error) {
+        console.error("Error sending data:", error);
+    }
+});
+    </script>
+</body>
+</html>
